@@ -4,9 +4,23 @@
   border-radius: 0.25rem;
   padding: 10px;
   margin-bottom: 10px;
+  transition: 0.2s;
 }
 
 :hover {
   color: darkgrey;
+  background: rgba(156, 162, 168, 0.1);
   transition: 200ms;
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+.titleFont {
+  font-size: large;
+  font-weight: bold;
+}
+
+.titlePosition {
+  margin-top: 10px;
+  margin-bottom: 0px;
 }

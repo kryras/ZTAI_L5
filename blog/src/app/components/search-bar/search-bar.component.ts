@@ -19,7 +19,6 @@ export class SearchBarComponent implements OnInit {
 
   sendFilter() {
     this.name.emit(this.filterText);
-    console.log('xyz');
   }
 
   // setQuery() {

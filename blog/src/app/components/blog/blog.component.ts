@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataService} from "../../services/data.service";
-import {BlogDataService} from "../../services/blog-data.service";
+// import {BlogDataService} from "../../services/blog-data.service";
 
 @Component({
   selector: 'app-blog',
@@ -13,7 +13,7 @@ export class BlogComponent implements OnInit {
   items: any;
   @Input('filterText') filterText: string;
 
-  constructor(private dataService: DataService, private blogData: BlogDataService, private router: Router, private route: ActivatedRoute) {
+  constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -26,9 +26,13 @@ export class BlogComponent implements OnInit {
 
   }
 
-  showBlogEntry(img, txt, id) {
-    this.blogData.blogImageSource(img);
-    this.blogData.blogTextSource(txt);
+  // showBlogEntry(img, txt, id) {
+  //   this.blogData.blogImageSource(img);
+  //   this.blogData.blogTextSource(txt);
+  //   this.router.navigate(['/blog/detail/', id]);
+  // }
+  //
+  showBlogEntry(id) {
     this.router.navigate(['/blog/detail/', id]);
   }
 

@@ -1,0 +1,8 @@
+.container-fluid {
+  margin-top: 10px;
+  width: 75vw;
+}
+
+.btn-primary {
+  float: right;
+}

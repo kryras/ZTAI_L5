@@ -6,20 +6,21 @@ import {HttpClient} from '@angular/common/http';
 })
 export class DataService {
 
-  // private url = 'https://jsonplaceholder.typicode.com';
   private url = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {
   }
 
   get(id) {
-    // return this.http.get(this.url + '/photos/' + id);
-    return this.http.get(this.url + '/api/posts/' + id);
+    return this.http.get(this.url + '/api/posts/' + id).pipe();
   }
 
   getAll() {
-    // return this.http.get(this.url + '/photos');
-    return this.http.get(this.url + '/api/posts');
+    return this.http.get(this.url + '/api/posts').pipe();
+  }
+
+  createPost(data) {
+    return this.http.post(this.url + '/api/posts/', data).pipe();
   }
 
 }

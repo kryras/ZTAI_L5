@@ -1,2 +1,9 @@
-  <app-blog-item-image imageUrl={{imageUrl}}></app-blog-item-image>
-<app-blog-item-text text="{{text}}"></app-blog-item-text>
+<div class="container-fluid wrapper">
+  <div class="titlePosition">
+    <app-blog-item-text class="titleFont" text="{{blogPost?.title}}"></app-blog-item-text>
+  </div>
+  <app-blog-item-image imageUrl={{blogPost?.image}}></app-blog-item-image>
+  <div class="textPosition">
+    <app-blog-item-text text="{{blogPost?.description}}"></app-blog-item-text>
+  </div>
+</div>

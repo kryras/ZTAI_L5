@@ -7,7 +7,7 @@ ul {
   list-style-type: none;
   padding-left: 0;
   width: 100%;
-  background-color: black;
+  /*background-color: black;*/
 }
 
 li {
@@ -18,5 +18,9 @@ li {
 }
 
 .list-group-item {
-  color: black;
+  /*color: black;*/
+}
+
+a {
+  color: #007bff;
 }

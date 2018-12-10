@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <form>
+    <div class="form-group">
+      <label for="title">Tytuł:</label>
+      <input [(ngModel)]="postData.title" name="title" type="text" id="title" class="form-control">
+    </div>
+    <label for="descriptionInput">Treść:</label>
+    <textarea [(ngModel)]="postData.description" name="description" class="form-control" id="descriptionInput"></textarea>
+    <div class="form-group">
+      <label for="image">Link do obrazu:</label>
+      <input [(ngModel)]="postData.image" name="image" type="text" id="image" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="createPost()">Dodaj</button>
+  </form>
+</div>
