@@ -1,12 +1,10 @@
 <div class="">
   <ul>
     <li *ngFor="let entry of items | filter:filterText">
-    <!--<li *ngFor="let entry of items | slice:0:10 | filter:filterText">-->
       <app-blog-item
         [imageUrl]="entry.image"
         [text]="entry.title | summary:50"
         (click)="showBlogEntry(entry.id)">
-        <!--(click)="showBlogEntry(entry.image, entry.description, entry.id)">-->
       </app-blog-item>
     </li>
   </ul>

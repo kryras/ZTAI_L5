@@ -18,5 +18,4 @@ const createBusinessContainer = (request, config) => {
   };
 };
 
-// export default createBusinessContainer;
 module.exports = createBusinessContainer;

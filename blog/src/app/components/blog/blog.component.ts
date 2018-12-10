@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataService} from "../../services/data.service";
+
 // import {BlogDataService} from "../../services/blog-data.service";
 
 @Component({
@@ -26,18 +27,8 @@ export class BlogComponent implements OnInit {
 
   }
 
-  // showBlogEntry(img, txt, id) {
-  //   this.blogData.blogImageSource(img);
-  //   this.blogData.blogTextSource(txt);
-  //   this.router.navigate(['/blog/detail/', id]);
-  // }
-  //
   showBlogEntry(id) {
     this.router.navigate(['/blog/detail/', id]);
   }
 
-  // setQuery() {
-  //     this.router.navigate(['/blog'],
-  //       {queryParams: {title: this.filterText }});
-  // }
 }

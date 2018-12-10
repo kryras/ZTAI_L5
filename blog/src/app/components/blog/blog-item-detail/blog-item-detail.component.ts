@@ -25,14 +25,4 @@ export class BlogItemDetailComponent implements OnInit {
       this.blogPost = result;
     });
   }
-
-  // }  imageUrl : string;
-  // text : string;
-  // constructor(private blogData: BlogDataService) { }
-  //
-  // ngOnInit() {
-  //   this.blogData.currentImage.subscribe(image => this.imageUrl = image);
-  //   this.blogData.currentText.subscribe(text => this.text = text);
-  // }
-
 }

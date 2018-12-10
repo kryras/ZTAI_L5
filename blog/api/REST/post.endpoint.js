@@ -30,5 +30,4 @@ const postEndpoint = (router) => {
 
 };
 
-// export default postEndpoint;
 module.exports = postEndpoint;

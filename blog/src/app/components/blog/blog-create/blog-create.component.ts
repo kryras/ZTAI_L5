@@ -24,6 +24,6 @@ export class BlogCreateComponent implements OnInit {
   createPost(postData) {
     console.log("Utworzenie postu", this.postData);
     this.dataService.createPost(this.postData).subscribe();
-    this.router.navigate(['blog']);
+    this.router.navigate(['/']);
   }
 }
