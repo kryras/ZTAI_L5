@@ -37,8 +37,8 @@ async function createNewOrUpdate(data) {
   return Promise.resolve().then(() => {
     if (!data.id) {
       return new PostModel(data).save().then(result => {
-        if (result[0]) {
-          return mongoConverter(result[0]);
+        if (result) {
+          return mongoConverter(result);
         }
       });
     } else {
@@ -47,8 +47,7 @@ async function createNewOrUpdate(data) {
   }).catch(error => {
     if ('ValidationError' === error.name) {
       error = error.errors[Object.keys(error.errors)[0]];
-      throw applicationException.new(applicationException.BAD_REQUEST, error.message);
-      console.log(error.message);
+      throw applicationException.new(applicationException.BAD_REQUEST, error.message)
     }
     throw error;
   });

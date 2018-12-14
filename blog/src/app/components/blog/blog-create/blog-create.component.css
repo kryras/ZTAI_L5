@@ -2,3 +2,8 @@
   margin-top: 10px;
   width: 80vw;
 }
+
+/*textarea {*/
+  /*white-space: pre;*/
+  /*!*white-space: nowrap;*!*/
+/*}*/
