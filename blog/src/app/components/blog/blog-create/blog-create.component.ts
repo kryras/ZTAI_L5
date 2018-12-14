@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {DataService} from "../../../services/data.service";
+import {HttpEventType} from "@angular/common/http";
 
 @Component({
   selector: 'app-blog-create',
@@ -23,8 +24,9 @@ export class BlogCreateComponent implements OnInit {
 
   createPost() {
     console.log("Utworzenie postu", this.postData);
-    this.dataService.createPost(this.postData).subscribe(response => {
-      this.router.navigate(['/blog']);
+    this.dataService.createPost(this.postData).subscribe(response  => {
+      let postObj:any = response;
+      this.router.navigate(['/blog/detail/', postObj.id]);
     }, error => {
       console.log(error);
     });
