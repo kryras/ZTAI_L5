@@ -28,7 +28,7 @@ export class BlogComponent implements OnInit {
   }
 
   showBlogEntry(id) {
-    this.router.navigate(['/blog/detail/', id]);
+    this.router.navigate(['/blog/detail/', id-1]);
   }
 
 }
