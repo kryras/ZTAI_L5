@@ -1,0 +1,22 @@
+<div class="container">
+  <form action="post" autocomplete="off" method="POST">
+    <div class="input-group">
+      <input [(ngModel)]="credentials.name" type="text" class="form-control"
+             name="name" placeholder="Nazwa" title="Wprowadź login">
+    </div>
+
+    <div class="input-group">
+      <input [(ngModel)]="credentials.email" type="email" class="form-control"
+             name="email" placeholder="E-mail" title="Wprowadź login">
+    </div>
+
+    <div class="input-group">
+      <input [(ngModel)]="credentials.password" type="password" class="form-control"
+             name="password" placeholder="Hasło" title="Wprowadź hasło">
+    </div>
+
+    <button (click)="create()" class="btn btn-lg btn-pink btn-block" type="submit" title="Przycisk zaloguj">
+      Załóż konto
+    </button>
+  </form>
+</div>

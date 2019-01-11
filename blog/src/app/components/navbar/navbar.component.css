@@ -18,3 +18,8 @@ li {
 a {
   color: #007bff;
 }
+
+.useAccount:hover {
+  color: black;
+  background-color: darkgrey;
+}

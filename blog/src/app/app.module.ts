@@ -14,14 +14,22 @@ import {SummaryPipe} from './pipes/summary.pipe';
 import {BlogItemTextComponent} from './components/blog/blog-item-text/blog-item-text.component';
 import {BlogItemImageComponent} from './components/blog/blog-item-image/blog-item-image.component';
 import {BlogItemDetailComponent} from './components/blog/blog-item-detail/blog-item-detail.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {DataService} from "./services/data.service";
 import {FilterPipe} from './pipes/filter.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
-import { BlogHomeComponent } from './components/blog/blog-home/blog-home.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { TextFormatDirective } from './directives/text-format.directive';
-import { BlogCreateComponent } from './components/blog/blog-create/blog-create.component';
+import {BlogHomeComponent} from './components/blog/blog-home/blog-home.component';
+import {SearchBarComponent} from './components/search-bar/search-bar.component';
+import {TextFormatDirective} from './directives/text-format.directive';
+import {BlogCreateComponent} from './components/blog/blog-create/blog-create.component';
+import {AuthServiceService} from "./services/auth-service.service";
+import {AdminGuard} from "./services/admin-guard.guard";
+import {AuthInterceptor} from "./services/auth/auth.interceptor";
+import {LoginComponent} from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+
+
+// import {AuthServiceService} from "./services/auth-service.service";
 
 const appRoutes: Routes = [
   {
@@ -34,7 +42,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'quiz',
-    component: QuizComponent
+    component: QuizComponent,
+    canActivate: [AdminGuard],
+    data: {state: 'admin'}
   },
   {
     path: 'blog',
@@ -47,7 +57,16 @@ const appRoutes: Routes = [
   {
     path: 'blog/createPost',
     component: BlogCreateComponent
-  }]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  }
+]
 
 
 @NgModule({
@@ -67,7 +86,9 @@ const appRoutes: Routes = [
     BlogHomeComponent,
     SearchBarComponent,
     TextFormatDirective,
-    BlogCreateComponent
+    BlogCreateComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +98,12 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [DataService],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },
+    DataService, AuthServiceService,],
   bootstrap: [AppComponent]
 })
 
