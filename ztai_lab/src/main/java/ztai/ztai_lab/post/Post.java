@@ -1,11 +1,31 @@
 package ztai.ztai_lab.post;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Post {
+
+    @Id
+    @GeneratedValue
+    @Column
     private long id;
+
+    @Column
     private String title;
+
+    @Column
     private String image;
+
+    @Column
     private String description;
 
+
+    public Post() {
+    }
     public Post(long id, String title, String image, String description) {
         this.id = id;
         this.title = title;
